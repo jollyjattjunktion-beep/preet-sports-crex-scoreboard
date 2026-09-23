@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: preet-sports-crex-scoreboard
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    envVars:
+      - key: CREX_URL
+        value: https://crex.com/cricket-live-score/bw-vs-ecr-final-european-t20-premier-league-2026-match-updates-13FP
+      - key: POLL_SECONDS
+        value: "5"
