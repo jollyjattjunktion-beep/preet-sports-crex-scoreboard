@@ -307,8 +307,7 @@ def background_worker():
 
 @app.route("/")
 def index():
-    return render_template("overlay.html")
-
+return render_template("index.html")
 
 @app.route("/api/score")
 def api_score():
